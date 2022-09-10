@@ -1,28 +1,26 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type School {
+  type User {
     _id: ID
-    name: String
-    location: String
-    studentCount: Int
-    classes: [Class]
+    username: String
+    email: String
+    bookCount: Int
+    savedBooks: [Book]
   }
 
-  type Class {
+  type Book {
     _id: ID
-    name: String
-    building: String
-    creditHours: Int
-    professor: Professor
+    bookId: String
+    authors: [String]
+    description: String
+    image: String
+    link: String
   }
 
-  type Professor {
-    _id: ID
-    name: String
-    officeHours: String
-    officeLocation: String
-    studentScore: Float
+  type Auth {
+    token: String
+    user: [User]
   }
 
   type Query {
