@@ -24,9 +24,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    schools: [School]
-    classes: [Class]
-    professors: [Professor]
+    users: [User]
+    books: [Book]
   }
 `;
 
